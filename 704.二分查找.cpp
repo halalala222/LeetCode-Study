@@ -44,24 +44,3 @@ public:
     }
 };
 // @lc code=end
-
-int main(int argc, char const *argv[])
-{
-    printf("-------------------start-------------------");
-    vector<int> test;
-    test.push_back(-1);
-    test.push_back(0);
-    test.push_back(3);
-    test.push_back(5);
-    test.push_back(9);
-    test.push_back(12);
-    for (int i = 0; i < test.size(); i++)
-    {
-        printf("%d",test[i]);
-    }
-    
-    Solution *s = new(Solution);
-    int num = s->search(test,9);
-    printf("num : %d",num);
-    return 0;
-}
