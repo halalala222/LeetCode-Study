@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
  */
 
 // @lc code=start
-class Solution {
+class MySolution {
     public String maskPII(String s) {
         boolean is_email = s.contains("@");
         String result = "";
@@ -39,4 +39,23 @@ class Solution {
         return result;
     }
 }
+
+class Solution {
+    //处理得好好，可以不用使用循环，只给定四个可以直接选择这个前缀。
+    String[] country = {"", "+*-", "+**-", "+***-"};
+
+    public String maskPII(String s) {
+        //可以直接找到下标，如果有的话
+        int at = s.indexOf("@");
+        if (at > 0) {
+            //可以直接全部变成小写
+            s = s.toLowerCase();
+            return (s.charAt(0) + "*****" + s.substring(at - 1)).toLowerCase();
+        }
+        //直接使用正则把不是数字的直接全部置换成空的字符串
+        s = s.replaceAll("[^0-9]", "");
+        return country[s.length() - 10] + "***-***-" + s.substring(s.length() - 4);
+    }
+}
+
 // @lc code=end
