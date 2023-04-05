@@ -1,5 +1,3 @@
-import javax.naming.spi.DirStateFactory.Result;
-
 /*
  * @lc app=leetcode.cn id=1053 lang=java
  *
