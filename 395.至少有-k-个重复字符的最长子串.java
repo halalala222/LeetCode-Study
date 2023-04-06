@@ -41,6 +41,10 @@ import java.util.Arrays;
 /**
  * 滑的不是很好.但是这滑，真的很叼。
  */
+/**
+ * 但是总体思路就是，重复次数满足 k 次的字母，只有 1-26 个，因为是 26 个字母
+ * 那么如果说遍历从 1-26 找到满足条件的。就能找到一个窗口，这个窗口的右边界如果多出一元素就不满足对应的条件了。
+ */
 class Solution {
     public int longestSubstring(String s, int k) {
         int result = 0, size = s.length();
