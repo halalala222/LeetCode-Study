@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-class Solution {
+class MySolution {
     public int kItemsWithMaximumSum(int numOnes, int numZeros, int numNegOnes, int k) {
         int afterPickOne = k - numOnes;
         if (afterPickOne <= 0) {
@@ -16,6 +16,12 @@ class Solution {
             return numOnes;
         }
         return numOnes - afterPickZero;
+    }
+}
+
+class Solution {
+    public int kItemsWithMaximumSum(int numOnes, int numZeros, int numNegOnes, int k) {
+        return Math.min(k, numOnes) - Math.max(k - numOnes - numZeros, 0);
     }
 }
 // @lc code=end
